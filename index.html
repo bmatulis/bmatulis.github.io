@@ -1,52 +1,76 @@
 <!DOCTYPE html>
+<!-- This is based on DillingerLee's great template here:
+https://github.com/Team-Code/KA_Offline -->
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>Brendan's Khan Academy Practice Website</title>
+  <title>Processing.JS inside Webpages: Template</title>
 </head>
 
 <body>
-  <h1>Khan Academy Practice Website for Brendan Matulis</h1>
-
-  <h2>St. Francis Prayer</h2>
-
-  <p>
-    Lord, make me an instrument of your peace.<br>
-    Where there is <em>hatred</em>, let me sow <em>love</em>;<br>
-    where there is <em>injury</em>, <em>pardon</em>;<br>
-    where there is <em>doubt</em>, <em>faith</em>;<br>
-    where there is <em>despair</em>, <em>hope</em>;<br>
-    where there is <em>darkness</em>, <em>light</em>;<br>
-    where there is <em>sadness</em>, <em>joy</em>;<br>
-    <br>
-    O divine Maestro,<br>
-    grant that I may not so much seek<br>
-    to be consoled as to console,<br>
-    to be understood as to understand,<br>
-    to be loved as to love.<br>
-    <strong>For it is in giving that we receive,<br>
-      it is in pardoning that we are pardoned,<br>
-      and it is in dying that we are born to life.</strong><br>
-    Amen.
+  <p align="center">
+    <!--This draws the Canvas on the webpage -->
+    <canvas id="mycanvas"></canvas>
   </p>
-
-  <img src="https://imgc.artprintimages.com/img/print/the-song-of-the-lark_u-l-e81yq0.jpg?h=550&p=0&w=550&background=fbfbfb" alt="The Song of the Lark Painting" width="350">
-
 </body>
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-207790184-1">
-</script>
+<!-- Run all the JavaScript stuff -->
+<!-- Include the processing.js library -->
+<!-- See https://khanacademy.zendesk.com/hc/en-us/articles/202260404-What-parts-of-ProcessingJS-does-Khan-Academy-support- for differences -->
+<script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
+
 <script>
-  window.dataLayer = window.dataLayer || [];
+  var sketchProc = function(processingInstance) {
+    with(processingInstance) {
+      size(400, 400);
+      frameRate(30);
 
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
 
-  gtag('config', 'UA-207790184-1');
+
+
+
+
+
+
+      // ProgramCodeGoesHere
+      background(151, 244, 247);
+      noStroke();
+      // position of the car
+      var x = 10;
+
+      draw = function() {
+
+        // all lines of code inside here will be run repeatedly
+        background(151, 244, 247);
+
+        // draw the car body
+        fill(255, 0, 115);
+        rect(x, 200, 100, 20);
+        rect(x + 15, 178, 70, 40);
+
+        // draw the wheels
+        fill(77, 66, 66);
+        ellipse(x + 25, 221, 24, 24);
+        ellipse(x + 75, 221, 24, 24);
+
+        x = x + 10;
+      };
+
+
+
+
+
+
+
+
+
+    }
+  };
+
+  // Get the canvas that Processing-js will use
+  var canvas = document.getElementById("mycanvas");
+  // Pass the function sketchProc (defined in myCode.js) to Processing's constructor.
+  var processingInstance = new Processing(canvas, sketchProc);
 </script>
 
 </html>
