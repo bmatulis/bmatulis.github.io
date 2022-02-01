@@ -23,28 +23,21 @@
   <script src="https://cdn.jsdelivr.net/processing.js/1.4.8/processing.min.js"></script>
 
  <script>
-   noStroke();
+   float yPos = 0.0;
 
-// position of the car
-var x = 10;
+void setup() {  // setup() runs once
+  size(200, 200);
+  frameRate(30);
+}
 
-draw = function() {
-
-   // all lines of code inside here will be run repeatedly
-   background(151, 244, 247);
-
-   // draw the car body
-   fill(255, 0, 115);
-   rect(x, 200, 100, 20);
-   rect(x + 15, 178, 70, 40);
-
-   // draw the wheels
-   fill(77, 66, 66);
-   ellipse(x + 25, 221, 24, 24);
-   ellipse(x + 75, 221, 24, 24);
-
-   x = x + 1;
-};
+void draw() {  // draw() loops forever, until stopped
+  background(204);
+  yPos = yPos - 1.0;
+  if (yPos < 0) {
+    yPos = height;
+  }
+  line(0, yPos, width, yPos);
+}
  </script>
 
 
