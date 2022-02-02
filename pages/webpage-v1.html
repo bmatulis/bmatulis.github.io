@@ -5,34 +5,41 @@
   <meta charset="utf-8">
   <title>Version 1 of Brendan's <a target="_blank" href="https://www.khanacademy.org/">Khan Academy</a> Practice Website</title>
   <style>
-    h1 {
-      color: red;
-    }
-
-    h2 {
-      color: rgb(22, 108, 17);
-    }
-
     body {
       background-color: rgb(17, 133, 255);
     }
 
-    #prayer {
-      color: rgb(230, 235, 13);
+    #page-title {
+      color: red;
     }
 
-    #prayer {
+    #table-of-contents {
+      background-color: rgb(235, 14, 120)
+    }
+
+    #prayer-title {
+      color: rgb(22, 108, 17);
+    }
+
+    #prayer-text {
       background-color: purple;
+      color: rgb(230, 235, 13);
     }
   </style>
 </head>
 
 <body>
-  <h1>Khan Academy Practice Website for Brendan Matulis</h1>
+  <h1 id="page-title">Khan Academy Practice Website for Brendan Matulis</h1>
 
-  <h2>St. Francis Prayer for Peace</h2>
+  <ul id="table-of-contents">
+    <li><a href="#prayer-title">St. Franics Prayer for Peace</a></li>
+    <li><a href="#song-of-the-lark-image">The Song of the Lark Painting</a></li>
+    <li><a href="#harley-image">Image of Harley</a></li>
+  </ul>
 
-  <p id="prayer">
+  <h2 id="prayer-title">St. Francis Prayer for Peace</h2>
+
+  <p id="prayer-text">
     Lord, make me an instrument of your peace.<br>
     Where there is <em>hatred</em>, let me sow <em>love</em>;<br>
     where there is <em>injury</em>, <em>pardon</em>;<br>
@@ -55,10 +62,10 @@
   </p>
 
   <a target="_blank" href="https://www.artic.edu/artworks/94841/the-song-of-the-lark">
-    <img src="https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg" alt="The Song of the Lark Painting" width="350">
+    <img id="song-of-the-lark-image" src="https://www.artic.edu/iiif/2/48b2de88-ba73-8e19-f448-d1cef4a1c847/full/1686,/0/default.jpg" alt="The Song of the Lark Painting" width="350">
   </a>
   <br>
-  <img src="images/harley.jpg" alt="A picture of Harley." width="350">
+  <img id="harley-image" src="images/harley.jpg" alt="A picture of Harley." width="350">
 </body>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
